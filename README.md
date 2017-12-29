@@ -1,5 +1,5 @@
 # Website
-[ ![Codeship Status for mxviteri/freelance](https://app.codeship.com/projects/05e25e70-99b1-0135-c7b5-5216b3d365f1/status?branch=master)](https://app.codeship.com/projects/252188)
+[ ![Codeship Status for mxviteri/freelance](https://app.codeship.com/projects/6e540de0-cf00-0135-7e2b-26b814663cce/status?branch=master)](https://app.codeship.com/projects/262222)
 
 A SPA website that I might use for freelancing
 

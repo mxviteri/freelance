@@ -1,0 +1,52 @@
+$white: #ffffff;
+$black: #000000;
+$gray: lighten($black, 30%);
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: $gray;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.5em;
+
+  span {
+    font-size: 1.5em;
+  }
+}
+
+.outline-success {
+  background: transparent;
+  color: $gray;
+  border-color: $gray;
+}
+
+.outline-primary {
+  background: transparent;
+  color: $gray;
+  border-color: $gray;
+}
+
+// Overriding bootstrap button colors
+button:hover {
+  color: $gray !important;
+  background-color: transparent !important;
+  border-color: $gray !important;
+}
+
+button:active {
+  color: $gray !important;
+  background-color: transparent !important;
+  border-color: $gray !important;
+}
+
+button:focus {
+  color: $gray !important;
+  background-color: transparent !important;
+  border-color: $gray !important;
+}
+
+.hidden {
+  display: none;
+}

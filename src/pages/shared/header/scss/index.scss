@@ -1,0 +1,31 @@
+.header {
+  position: fixed;
+  width: 100%;
+  line-height: 5em;
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,.15);
+  background: rgba(255,255,255,.97);
+  z-index: 99;
+  padding: 0 2em;
+
+  ul {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  li {
+    list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  img {
+    border-radius: 100%;
+    margin: 0 10px;
+  }
+
+  button {
+    margin: 0 5px;
+  }
+}

@@ -1,0 +1,82 @@
+.overlay {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 999;
+
+  .close {
+    border-radius: 100%;
+    padding: 5px;
+    position: absolute;
+    top: -13%;
+    opacity: 1;
+    right: 0;
+
+    span {
+      color: white;
+    }
+  }
+
+  .contact {
+    width: 60%;
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    form {
+      width: 80%;
+      margin: 2em auto;
+    }
+
+    .status {
+      width: 80%;
+      margin: 2em auto;
+      text-align: center;
+
+      p {
+        color: $gray;
+      }
+
+      i {
+        font-size: 2em;
+        margin-bottom: 10px;
+
+        @at-root .success {
+          color: green;
+        }
+
+        @at-root .failure {
+          color: red;
+        }
+      }
+    }
+
+    .loader {
+      border: .1em solid #f3f3f3; /* Light gray */
+      border-top: .1em solid $gray; /* gray */
+      border-radius: 50%;
+      width: 4em;
+      height: 4em;
+      margin: 0 auto;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+  }
+}
+
+// Media queries
+@media screen and (max-width: 500px) {
+  .overlay {
+    .contact {
+      width: 90%;
+    }
+  }
+}

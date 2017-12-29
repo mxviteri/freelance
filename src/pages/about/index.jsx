@@ -92,7 +92,7 @@ class About extends React.Component {
                   <p>Come on.. would I make you a site that doesn't scale? Of course not! Sites are hosted using Amazon Web Services where you and I have full control over all servers and resources <span>💻</span></p>
                   <div className="col-md-12 pad">
                     <div className="embed">
-                      <img src={awsImage} />
+                      <img src={awsImage} className="aws" />
                     </div>
                   </div>
                 </div>

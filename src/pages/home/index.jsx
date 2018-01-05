@@ -5,9 +5,10 @@ const ReactDOM = require('react-dom');
 const Link = require('react-router').Link;
 const Contact = require('../shared/contact/index.jsx');
 const Actions = require('../shared/actions');
-// Import OG image and favicon
+// Import OG image, background image and favicon
 const ogImage = require('../../img/ogimage.png');
 const favicon = require('../../img/favicon.ico');
+const teaching = require('../../img/teaching.png');
 
 class Home extends React.Component {
   constructor(props) {

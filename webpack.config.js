@@ -14,8 +14,7 @@ module.exports = {
     entry: './src/main.jsx',
     output: {
         path: path.resolve(__dirname, "lib"),
-        filename: 'js/bundle.js',
-        publicPath: '/'
+        filename: 'js/bundle.js'
     },
     watch: !(process.env.NODE_ENV === 'production'),
     module: {

@@ -4,6 +4,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const Link = require('react-router').Link;
 const Actions = require('../actions');
+const headshot = require('../../../img/headshot.jpg');
 
 class PageHeader extends React.Component {
   constructor(props) {
@@ -15,7 +16,7 @@ class PageHeader extends React.Component {
       <div className="header">
         <div className="row">
           <div className="col-md-12">
-            <img src="/img/headshot.jpg" alt="headshot" height="50" width="50" />
+            <img src={headshot} alt="headshot" height="50" width="50" />
             <Link to="/">
               <button type="button" className="btn btn-primary outline-primary">
                 Home

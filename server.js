@@ -1,4 +1,5 @@
 'use strict';
+//TODO: move this to a lambda -- moving to static s3 site instead of eb app
 
 const mailgun = require('mailgun-js')({apiKey: process.env.MAILGUN_KEY, domain: process.env.MAILGUN_DOMAIN});
 const express = require('express');

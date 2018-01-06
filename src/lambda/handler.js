@@ -8,11 +8,11 @@ module.exports.sendEmail = (event, context, callback) => {
   let statusCode;
   let message;
   const data = {
-    from: `${request.body.firstName} <${uuidv4()}@mattviteri.com>`,
-    'h:Reply-To': request.body.email,
+    from: `${event.body.firstName} <${uuidv4()}@mattviteri.com>`,
+    'h:Reply-To': event.body.email,
     to: process.env.SEND_TO,
     subject: `🎍 Let's build a website!`,
-    text: request.body.message
+    text: event.body.message
   };
   mailgun.messages().send(data, (error, body) => {
     if (error) {

@@ -14,6 +14,8 @@ module.exports.sendEmail = (event, context, callback) => {
     subject: `🎍 Let's build a website!`,
     text: event.body.message
   };
+  console.log('Email data:', data);
+
   mailgun.messages().send(data, (error, body) => {
     if (error) {
       console.log(`Mailgun error: ${error}`);

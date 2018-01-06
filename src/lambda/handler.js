@@ -19,6 +19,7 @@ module.exports.sendEmail = (event, context, callback) => {
   mailgun.messages().send(data, (error, body) => {
     if (error) {
       console.log(`Mailgun error: ${error}`);
+      throw error;
       statusCode = 500;
       message = 'failure';
     }

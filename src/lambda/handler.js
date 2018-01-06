@@ -2,9 +2,14 @@
 
 const mailgun = require('mailgun-js')({apiKey: process.env.MAILGUN_KEY, domain: process.env.MAILGUN_DOMAIN});
 const uuidv4 = require('uuid/v4');
+const util = require('util');
 
 module.exports.sendEmail = (event, context, callback) => {
   console.log(`starting sendEmail: event: ${JSON.stringify(event)}, context: ${JSON.stringify(context)}`);
+
+  console.log('FIRST', util.inspect(event, false, null));
+  console.log('SECOND', util.inspect(event.body, false, null));
+
   let statusCode;
   let message;
   const data = {
@@ -19,9 +24,8 @@ module.exports.sendEmail = (event, context, callback) => {
   mailgun.messages().send(data, (error, body) => {
     if (error) {
       console.log(`Mailgun error: ${error}`);
-      throw error;
-      // statusCode = 500;
-      // message = 'failure';
+      statusCode = 500;
+      message = 'failure';
     }
     statusCode = 200;
     message = 'success';
@@ -35,6 +39,6 @@ module.exports.sendEmail = (event, context, callback) => {
       body: JSON.stringify({ "message": message })
     };
 
-    callback(null, response);
+    callback(error, response);
   });
 };

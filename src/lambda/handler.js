@@ -1,6 +1,14 @@
 'use strict';
 
 module.exports.sendEmail = (event, context, callback) => {
-    // Succeed with the string "Hello world!"
-    callback(null, 'Hello world!');
+  const response = {
+    statusCode: 200,
+    headers: {
+      "Access-Control-Allow-Origin" : "*", // Required for CORS support to work
+      "Access-Control-Allow-Credentials" : true // Required for cookies, authorization headers with HTTPS
+    },
+    body: JSON.stringify({ "message": "Hello World!" })
+  };
+
+  callback(null, response);
 };

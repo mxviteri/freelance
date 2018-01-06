@@ -7,8 +7,8 @@ const util = require('util');
 module.exports.sendEmail = (event, context, callback) => {
   console.log(`starting sendEmail: event: ${JSON.stringify(event)}, context: ${JSON.stringify(context)}`);
 
-  console.log('FIRST', util.inspect(event, false, null));
-  console.log('SECOND', util.inspect(event.body, false, null));
+  console.log('FIRST', util.inspect(event.body, false, null));
+  console.log('SECOND', util.inspect(JSON.parse(event.body), false, null));
 
   let statusCode;
   let message;
@@ -39,6 +39,6 @@ module.exports.sendEmail = (event, context, callback) => {
       body: JSON.stringify({ "message": message })
     };
 
-    callback(error, response);
+    callback(null, response);
   });
 };

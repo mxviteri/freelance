@@ -58,7 +58,7 @@ functions:
       - http:
           path: /sendEmail
           method: post
-          cors: ${self:custom.corsConfig}
+          # cors: ${self:custom.corsConfig}
 
 # resources:
 #   Resources:

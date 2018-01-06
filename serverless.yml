@@ -54,9 +54,9 @@ functions:
     description: Sends an email from the site
     handler: src/lambda/handler.sendEmail
     environment:
-      MAILGUN_DOMAIN: $MAILGUN_DOMAIN
-      MAILGUN_KEY: $MAILGUN_KEY
-      SEND_TO: $SEND_TO
+      MAILGUN_DOMAIN: ${env:MAILGUN_DOMAIN}
+      MAILGUN_KEY: ${env:MAILGUN_KEY}
+      SEND_TO: ${env:SEND_TO}
     events:
       - http:
           path: /sendEmail

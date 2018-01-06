@@ -4,8 +4,7 @@ const React = require('react');
 const ReactDOM = require('react-dom');
 const request = require('request');
 const Actions = require('../actions');
-
-const baseUrl = window.location.origin;
+const apiUrl = 'https://q8j8zb48c6.execute-api.us-east-2.amazonaws.com/prod';
 
 class Contact extends React.Component {
   constructor(props) {
@@ -26,7 +25,7 @@ class Contact extends React.Component {
     });
 
     const options = {
-      url: `${baseUrl}/send`,
+      url: `${apiUrl}/sendEmail`,
       method: 'POST',
       json: true,
       body: {
@@ -37,11 +36,10 @@ class Contact extends React.Component {
     };
 
     request(options, (err, res, body) => {
-      const message = res.statusCode === 200 ? 'success' : 'failure';
       this.setState({
         sending: false,
         sent: true,
-        message: message
+        message: body.message
       });
       setTimeout(() => {
         Actions.toggleContactForm();

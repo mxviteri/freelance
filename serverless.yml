@@ -53,25 +53,12 @@ functions:
     name: ${self:service}-sendEmail
     description: Sends an email from the site
     handler: src/lambda/handler.sendEmail
-    # role: freelanceService
+    environment:
+      MAILGUN_DOMAIN: $MAILGUN_DOMAIN
+      MAILGUN_KEY: $MAILGUN_KEY
+      SEND_TO: $SEND_TO
     events:
       - http:
           path: /sendEmail
           method: post
           cors: ${self:custom.corsConfig}
-
-# resources:
-#   Resources:
-#     freelanceService:
-#       Type: AWS::IAM::Role
-#       Properties:
-#         Policies:
-#           - PolicyName: InvokeLambda
-#             PolicyDocument:
-#               Version: '2012-10-17'
-#               Statement:
-#                 - Effect: Allow
-#                   Action:
-#                     - "lambda:InvokeAsync"
-#                     - "lambda:InvokeFunction"
-#                   Resource: '*'

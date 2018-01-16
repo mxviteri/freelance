@@ -97,6 +97,23 @@ class Home extends React.Component {
                 </div>
               </div>
             </div>
+            <div className="row skills">
+              <h3>Tools & Technologies</h3>
+              <div>
+                <i className="devicon-react-original"></i>
+                <i className="devicon-angularjs-plain"></i>
+                <i className="devicon-nodejs-plain"></i>
+                <i className="devicon-amazonwebservices-original"></i>
+                <i className="devicon-css3-plain"></i>
+                <i className="devicon-sass-original"></i>
+                <i className="devicon-mongodb-plain"></i>
+                <i className="devicon-webpack-plain"></i>
+                <i className="devicon-gulp-plain"></i>
+                <i className="devicon-babel-plain"></i>
+                <i className="devicon-nginx-original"></i>
+                <i className="devicon-mocha-plain"></i>
+              </div>
+            </div>
             <div className="row toAbout">
               <div className="col-wrapper">
                 <div className="col-md-12">

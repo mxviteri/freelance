@@ -61,7 +61,7 @@ class About extends React.Component {
                 </div>
                 <div className="row">
                   <h3>Need SEO? Here's SEO!</h3>
-                  <p>All pages are written semantically for search engine optimization <span>🌎</span></p>
+                  <p>All pages are written semantically and tools like Prerender improve search engine optimization <span>🌎</span></p>
                   <div className="col-md-12 pad">
                     <div className="seo">
                       <i className="fa fa-search" aria-hidden="true"></i>

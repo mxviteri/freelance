@@ -1,6 +1,7 @@
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const htmlWebpackPlugin = require('html-webpack-plugin');
+const CompressionPlugin = require('compression-webpack-plugin');
 
 const ejsTemplate = new htmlWebpackPlugin({
     template: 'src/index.ejs'
@@ -8,6 +9,11 @@ const ejsTemplate = new htmlWebpackPlugin({
 const extractSass = new ExtractTextPlugin({
     filename: "styles/[name].min.css",
     disable: !(process.env.NODE_ENV === "production")
+});
+const compression = new CompressionPlugin({
+    asset: "[path].gz[query]",
+    algorithm: "gzip",
+    test: /\.js$|\.css$|\.html$/
 });
 
 module.exports = {
@@ -66,7 +72,8 @@ module.exports = {
     },
     plugins: [
       ejsTemplate,
-      extractSass
+      extractSass,
+      compression
     ],
     node: {
       fs: 'empty',
